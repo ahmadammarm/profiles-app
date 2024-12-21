@@ -2,16 +2,20 @@ import React from 'react'
 import ProfileItemHeader from './ProfileItemHeader'
 import ProfileItemBody from './ProfileItemBody'
 import { Card, CardContent } from './ui/card'
-import { Button } from './ui/button'
+import DeleteButton from './DeleteButton'
 
 interface ProfileItemProps {
+    id: number,
     nama: string,
-    prodi: string
+    prodi: string,
+    onDelete: (id: number) => void
 }
 
 const ProfileItem: React.FC<ProfileItemProps> = ({
+    id,
     nama,
-    prodi
+    prodi,
+    onDelete
 }) => {
   return (
     <div className="p-5">
@@ -19,9 +23,7 @@ const ProfileItem: React.FC<ProfileItemProps> = ({
             <CardContent>
                 <ProfileItemHeader nama={nama}/>
                 <ProfileItemBody nama={nama}  prodi={prodi} />
-                <Button className="mt-5">
-                    Lihat Detail
-                </Button>
+                <DeleteButton id={id} onDelete={onDelete} />
             </CardContent>
         </Card>
     </div>
