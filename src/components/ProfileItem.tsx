@@ -6,21 +6,19 @@ import { Button } from './ui/button'
 
 interface ProfileItemProps {
     nama: string,
-    nim: string,
     prodi: string
 }
 
 const ProfileItem: React.FC<ProfileItemProps> = ({
     nama,
-    nim,
     prodi
 }) => {
   return (
     <div className="p-5">
         <Card className="py-4 flex items-center justify-center">
             <CardContent>
-                <ProfileItemHeader nama={nama} nim={nim}/>
-                <ProfileItemBody nama={nama} nim={nim} prodi={prodi} />
+                <ProfileItemHeader nama={nama}/>
+                <ProfileItemBody nama={nama}  prodi={prodi} />
                 <Button className="mt-5">
                     Lihat Detail
                 </Button>

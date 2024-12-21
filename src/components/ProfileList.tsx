@@ -2,7 +2,7 @@ import React from 'react'
 import ProfileItem from './ProfileItem'
 
 interface ProfileListProps {
-    profiles: { id: number, nama: string; nim: string; prodi: string; }[]
+    profiles: { id: number, nama: string; prodi: string; }[]
 
 }
 
